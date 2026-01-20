@@ -32,6 +32,7 @@ const products = [
     // Bunlara da ID ekledik ki linkleri olsun
     { id: "shirt", category: "shirt", comingSoon: true },
     { id: "sweatshirt", category: "sweatshirt", comingSoon: true },
+    { id: "pants-upcoming", category: "pants", comingSoon: true },
     { id: "underwear", category: "underwear", comingSoon: true },
     { id: "hat-upcoming", category: "hat", comingSoon: true },
 
@@ -272,6 +273,7 @@ function setLanguage(lang) {
     document.getElementById('cat-pants').innerText = t.catPants;
     document.getElementById('cat-underwear').innerText = t.catUnderwear;
     document.getElementById('cat-hat').innerText = t.catHat;
+    
 
     // Info Page & Footer
     if(document.getElementById('menu-home')) {
@@ -498,5 +500,4 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
     // Menüyü kapat
     document.getElementById('infoSidebar').classList.remove('active');
-
 }
