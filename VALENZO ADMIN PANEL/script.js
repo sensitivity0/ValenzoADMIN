@@ -36,6 +36,26 @@ const products = [
     { id: "underwear", category: "underwear", comingSoon: true },
     { id: "hat-upcoming", category: "hat", comingSoon: true },
 
+    
+    {
+    "id": "hat1768944607773",
+    "category": "hat",
+    "title": "Su Aygıri",
+    "titleSq": "Hipopotam",
+    "price": "€0.25",
+    "descEn": "Açık Agızlen uyur\r\nLigalari akar\r\nAşk Acısi Çeker (Dilara)",
+    "descSq": "Fle me gojë hapur\r\njargëzim\r\nDashuria vuan (Dilara)",
+    "image": "Fotoğraflar/1768944607761-Ekran-görüntüsü-2026-01-21-002644.png",
+    "images": [
+        "Fotoğraflar/1768944607761-Ekran-görüntüsü-2026-01-21-002644.png",
+        "Fotoğraflar/1768944607768-Ekran-görüntüsü-2026-01-21-002716.png"
+    ],
+    "specs": [
+        "Product ID: HAT1768944607773"
+    ],
+    "comingSoon": false
+},
+
     // --- YENİ ÜRÜNLER BURAYA EKLENECEK ---
 ];
 

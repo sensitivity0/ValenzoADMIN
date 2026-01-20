@@ -16,7 +16,7 @@
 
     <div class="fixed-nav-container">
         <header>
-            <div class="logo">VALENZO<span>PREMIUM</span></div>
+            <div class="logo" onclick="window.location.hash=''; window.scrollTo(0,0);" style="cursor: pointer; user-select: none; -webkit-user-select: none;">VALENZO<span>PREMIUM</span></div>
             <div class="lang-switch">
                 <button onclick="setLanguage('en')" class="active" id="btn-en">EN</button>
                 <button onclick="setLanguage('sq')" id="btn-sq">AL</button>
@@ -241,5 +241,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>

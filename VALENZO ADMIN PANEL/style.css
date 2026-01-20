@@ -11,6 +11,29 @@ body, html{
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
+
+/* 1. Genel olarak her yerde seçimi kapat (Butonlar, menüler, sabit yazılar) */
+body, html, .products-card, .logo, .filter-btn, .footer-column {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 2. Ama şu alanlarda müşteri yazı seçebilsin (Kopyala-Yapıştır için gerekli) */
+.detail-title,      /* Ürün Başlığı */
+.detail-price,      /* Fiyat */
+.product-specs,     /* Özellikler */
+#modalDesc,         /* Ürün Açıklaması */
+.contact-item p,    /* İletişim bilgileri */
+.purchase-instruction-box /* Satın alma talimatı */
+{
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+    cursor: text; /* Üzerine gelince yazı imleci çıksın */
+}
 }
 
 a { text-decoration: none; color: white; transition: 0.3s; }

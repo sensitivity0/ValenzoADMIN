@@ -122,5 +122,4 @@ app.listen(port, () => {
     console.log(`VALENZO ADMIN PANELİ ÇALIŞIYOR`);
     console.log(`Panele gitmek için tarayıcına şunu yaz: http://localhost:${port}/admin`);
     console.log(`--------------------------------------------------`);
-
 });

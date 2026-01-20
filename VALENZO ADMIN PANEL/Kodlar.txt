@@ -1,7 +1,6 @@
 node -v
 npm init -y
 npm install express multer cors body-parser
-npm install (Elınde package.json ve package.lock.json dosyalari varise)
 node server.js
 
 Valenzo Admın Panel ve Site Kodlarını indirmek için:
