@@ -54,6 +54,7 @@ const translations = {
         catSweatshirt: "Sweatshirts",
         catUnderwear: "Underwear",
         catHat: "Hats",
+        catPants: "Pants",
         labelSize: "SIZE: PLEASE SELECT",
         labelDetails: "PRODUCT DETAILS",
         noteTitle: "HOW TO BUY?",
@@ -109,6 +110,7 @@ const translations = {
         catSweatshirt: "Sweatshirts", // Genelde aynı kullanılır veya "Duksa"
         catUnderwear: "Të Brendshme",
         catHat: "Kapele",
+        catPants: "Pantallona",
         labelSize: "MASA: JU LUTEM ZGJIDHNI",
         labelDetails: "DETAJET E PRODUKTIT",
         noteTitle: "SI TË BLINI?",
@@ -267,6 +269,7 @@ function setLanguage(lang) {
     document.getElementById('cat-all').innerText = t.catAll;
     document.getElementById('cat-shirt').innerText = t.catShirt;
     document.getElementById('cat-sweatshirt').innerText = t.catSweatshirt;
+    document.getElementById('cat-pants').innerText = t.catPants;
     document.getElementById('cat-underwear').innerText = t.catUnderwear;
     document.getElementById('cat-hat').innerText = t.catHat;
 
@@ -495,4 +498,5 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
     // Menüyü kapat
     document.getElementById('infoSidebar').classList.remove('active');
+
 }
