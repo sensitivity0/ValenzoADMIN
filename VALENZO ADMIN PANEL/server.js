@@ -44,7 +44,7 @@ app.post('/add-product', upload.array('photos', 5), (req, res) => {
 
         // 1. Yeni Ürün ID'sini Oluştur (Kategori + Rastgele Sayı)
         // Link yapısı: https://site.com/#shirt123 gibi olacak
-        const productId = body.category + Math.floor(Math.random() * 10000);
+        const productId = body.category + Date.now();
 
         // 2. Resim Yollarını Hazırla
         // script.js içinde "Fotoğraflar/resim.png" şeklinde kullanılacak
@@ -122,4 +122,5 @@ app.listen(port, () => {
     console.log(`VALENZO ADMIN PANELİ ÇALIŞIYOR`);
     console.log(`Panele gitmek için tarayıcına şunu yaz: http://localhost:${port}/admin`);
     console.log(`--------------------------------------------------`);
+
 });
