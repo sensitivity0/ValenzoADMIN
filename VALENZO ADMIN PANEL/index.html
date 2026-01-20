@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENZO PREMIUM</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="fixed-nav-container">
+        <header>
+            <div class="logo">VALENZO<span>PREMIUM</span></div>
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')" class="active" id="btn-en">EN</button>
+                <button onclick="setLanguage('sq')" id="btn-sq">AL</button>
+            </div>
+        </header>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterSelection('all')" id="cat-all">All</button>
+            <button class="filter-btn" onclick="filterSelection('shirt')" id="cat-shirt">T-Shirts</button>
+            <button class="filter-btn" onclick="filterSelection('sweatshirt')" id="cat-sweatshirt">Sweatshirts</button>
+            <button class="filter-btn" onclick="filterSelection('underwear')" id="cat-underwear">Underwear</button>
+            <button class="filter-btn" onclick="filterSelection('hat')" id="cat-hat">Hats</button>
+        </div>
+
+        <div id="promoBar" class="promo-bar">
+            <button class="promo-arrow" onclick="changeSlide(-1)">&#10094;</button>
+            
+            <div class="promo-content">
+                <div class="promo-slide active" id="promo-text-free">FREE SHIPPING ON ALL ORDERS</div>
+                
+                <div class="promo-slide">
+                    <span id="promo-text-sale">SALE:</span> 
+                    <a href="https://valenzopremium.netlify.app" class="promo-link" id="promo-text-men">MEN</a> 
+                    <span class="separator">-</span> 
+                    <span class="promo-disabled" id="promo-text-women">WOMEN</span>
+                </div>
+            </div>
+
+            <button class="promo-arrow" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1 id="motto-title">Men's Luxury Clothing</h1>
+        <p id="motto-desc">Timeless elegance. Pure exclusivity.</p>
+        <div class="info-note" id="hero-note">Purchase available only via <i>Instagram</i>.</div>
+    </section>
+
+    <div class="products-container" id="productContainer">
+        </div>
+
+    <div id="productModal" class="modal-overlay">
+        <button class="modal-close-btn" onclick="closeProductModal()">&times;</button>
+        <div class="modal-content">
+            <div class="detail-images" id="modalImagesContainer"></div>
+            
+            <div class="detail-info">
+                <h2 class="detail-title" id="modalTitle">ÜRÜN ADI</h2>
+                <span class="detail-price" id="modalPrice">€00.00</span>
+                
+                <div class="size-selector">
+                    <span id="label-size">SIZE: PLEASE SELECT</span>
+                    <div class="sizes">
+                        <div class="size-box">S</div>
+                        <div class="size-box">M</div>
+                        <div class="size-box">L</div>
+                        <div class="size-box">XL</div>
+                        <div class="size-box">XXL</div>
+                    </div>
+                </div>
+
+                <div class="purchase-instruction-box">
+                    <strong id="note-title">HOW TO BUY?</strong>
+                    <span id="note-text">
+                        Please contact us via <a href="https://www.instagram.com/valenzo.premium/" target="_blank">Instagram DM</a> to purchase this item.
+                    </span>
+                </div>
+
+                <div class="product-specs">
+                    <h4 id="label-details">PRODUCT DETAILS</h4>
+
+                    <p id="modalDesc" style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; white-space: pre-line;"></p>
+                    
+                    <ul id="modalSpecs"></ul> <p>Made in Portugal. 100% Cotton Jersey. Loose Fit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox-overlay">
+        <button class="lb-close-btn" onclick="closeLightbox()">&times;</button>
+        
+        <div class="lb-thumbnails" id="lbThumbContainer"></div>
+        
+        <div class="lb-main-area" onclick="closeLightbox()">
+            <img src="" class="lb-main-img" id="lbMainImg" onclick="event.stopPropagation()"> 
+        </div>
+    </div>
+    
+    <div id="csModal" class="cs-modal-overlay">
+        <div class="cs-modal-content">
+            <button class="cs-close-btn" onclick="closeComingSoonModal()">&times;</button>
+            <div class="cs-modal-icon">★</div>
+            <h2 id="cs-modal-title">COMING SOON</h2>
+            <p id="cs-modal-text">
+                This exclusive collection is on its way. <br><br>
+                Do you have a special request? We value your thoughts. 
+                Contact us directly via Instagram.
+            </p>
+            <a href="https://www.instagram.com/valenzo.premium/" target="_blank" class="cs-instagram-btn">
+                CONTACT VIA INSTAGRAM
+            </a>
+        </div>
+    </div>
+
+   <footer class="site-footer">
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h3 id="foot-follow-title">FOLLOW VALENZO PREMIUM</h3>
+                <p id="foot-follow-desc">There is always something more for you to discover.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/valenzo.premium/" target="_blank">
+                        <i class="fab fa-instagram"></i> INSTAGRAM
+                    </a>
+                    <a href="#" class="inactive-social">
+                        <i class="fab fa-facebook-f"></i> FACEBOOK
+                    </a>
+                    <a href="#" class="inactive-social">
+                        <i class="fab fa-twitter"></i> TWITTER
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column brand-voice">
+                <h2 id="foot-brand-title">BE PART OF THE LEGACY</h2>
+                <p id="foot-brand-text">
+                    Join the <strong>#VALENZOPREMIUM</strong>. Be the first to witness our new drops, 
+                    behind-the-scenes content, and exclusive style edits directly on our feed.
+                </p>
+            </div>
+
+            <div class="footer-column links-column">
+                <a href="#about" id="link-about">ABOUT US</a>
+                <a href="#contact" id="link-contact">CONTACT US</a>
+                <a href="#delivery" id="link-delivery">DELIVERY & RETURNS</a>
+            </div>
+
+        </div> <div class="footer-bottom">
+            <span class="copyright">&copy; 2026 VALENZO PREMIUM. ALL RIGHTS RESERVED.</span>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div id="info-page" class="info-overlay" style="display: none;">
+        
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="info-sidebar" id="infoSidebar">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="info-logo">VALENZO<span>PREMIUM</span></div>
+            
+            <nav class="info-nav">
+                <a href="#" class="info-link home-link" onclick="closeMobileMenu()">
+                    <i class="fas fa-arrow-left"></i> <span id="menu-home">HOME</span>
+                </a>
+                
+                <div class="nav-separator"></div>
+                
+                <a href="#about" class="info-link" id="menu-about" onclick="closeMobileMenu()">ABOUT US</a>
+                <a href="#contact" class="info-link" id="menu-contact" onclick="closeMobileMenu()">CONTACT US</a>
+                <a href="#delivery" class="info-link" id="menu-delivery" onclick="closeMobileMenu()">DELIVERY & RETURNS</a>
+            </nav>
+        </div>
+
+        <div class="info-content-area" onclick="closeMobileMenu()">
+            
+            <div id="tab-about" class="info-tab-content">
+                <h1 id="about-title">...</h1>
+                <p id="about-text-1">...</p>
+                <hr class="content-divider">
+                <h3 id="about-sub-title">...</h3>
+                <p id="about-text-2">...</p>
+            </div>
+
+            <div id="tab-contact" class="info-tab-content">
+                <h1 id="contact-title">...</h1>
+                <p id="contact-desc">...</p>
+
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <h3>INSTAGRAM</h3>
+                        <p id="contact-insta-text">...</p>
+                        <a href="https://www.instagram.com/valenzo.premium/" target="_blank" class="contact-btn">@valenzo.premium</a>
+                    </div>
+                    
+                    <div class="contact-item coming-soon-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WHATSAPP</h3>
+                        <p id="contact-wa-text">Direct support line.</p>
+                        <span class="contact-btn disabled">COMING SOON</span>
+                    </div>
+
+                    <div class="contact-item coming-soon-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>EMAIL</h3>
+                        <p>Business Inquiries</p>
+                        <span class="contact-btn disabled">COMING SOON</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-delivery" class="info-tab-content">
+                <h1 id="del-title">...</h1>
+                <div class="policy-box"><h3 id="del-sub-1">...</h3><p id="del-text-1">...</p></div>
+                <div class="policy-box"><h3 id="del-sub-2">...</h3><p id="del-text-2">...</p></div>
+                <div class="policy-box warning"><h3 id="del-sub-3">...</h3><p id="del-text-3">...</p><p id="del-text-4">...</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
